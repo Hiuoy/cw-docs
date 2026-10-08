@@ -1,0 +1,84 @@
+/* cw-mod docs: a few settings on top of docsify's core theme. */
+
+:root {
+  --theme-color: #c2410c;
+  --content-max-width: 96ch;
+  --sidebar-width: 310px;
+  --sidebar-font-size: 15px;
+
+  /* docsify-tabs: follow the theme in light and dark. */
+  --docsifytabs-border-color: var(--border-color);
+  --docsifytabs-tab-background: var(--color-mono-1);
+  --docsifytabs-tab-background-active: transparent;
+  --docsifytabs-tab-color: var(--color-mono-6);
+  --docsifytabs-tab-color-active: inherit;
+  --docsifytabs-content-padding: 1rem 1.25rem;
+}
+
+/* Tables carry most of the reference material: keep them compact, and never break an address or a name
+   in the middle. A wide table scrolls sideways on its own. */
+.markdown-section table {
+  font-size: var(--font-size-s);
+}
+
+.markdown-section th {
+  white-space: nowrap;
+}
+
+.markdown-section td code,
+.markdown-section th code {
+  word-break: normal;
+  overflow-wrap: normal;
+  white-space: nowrap;
+}
+
+/* A long signature may wrap; it is marked with <code class="wrap"> in generated tables. */
+.markdown-section td code.wrap {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Function tables are name | RVA | address | signature | role. The first three columns never break; code
+   from the fourth column on (signatures) wraps at spaces, so the last column stays on the page. */
+.markdown-section td:nth-child(n + 4) code {
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+/* The line under a page title: one sentence and the status. */
+.markdown-section h1 + blockquote {
+  font-size: var(--font-size-m);
+}
+
+.markdown-section .mermaid {
+  margin-block: 1.25rem;
+  text-align: center;
+}
+
+/* Long name lists (models, materials) are embedded text files: keep them in a box that scrolls. */
+.markdown-section pre[data-lang='text'] code,
+.markdown-section pre.language-text code {
+  max-height: 32rem;
+  overflow: auto;
+}
+
+/* Folding sidebar groups (assets/site.js). */
+.sidebar-nav .cw-group-title {
+  cursor: pointer;
+  user-select: none;
+}
+
+.sidebar-nav .cw-group-title::after {
+  content: '\2212';
+  float: right;
+  margin-right: 0.75em;
+  opacity: 0.55;
+}
+
+.sidebar-nav .cw-group.cw-folded > .cw-group-title::after {
+  content: '+';
+}
+
+.sidebar-nav .cw-group.cw-folded > ul {
+  display: none;
+}

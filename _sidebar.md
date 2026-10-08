@@ -1,0 +1,6 @@
+- [Home](/)
+- [How we did it](/re/)
+- [Guides](/guide/)
+- [Glossary](/glossary.md)
+- [Legal](/legal.md)
+- [About these docs](/about.md)
